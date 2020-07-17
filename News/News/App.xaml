@@ -15,21 +15,24 @@
 
 			<FontImage x:Key="HomeIcon" 
 			           FontFamily="{StaticResource IconFont}"
-			           Glyph='& #xf015;' 
+			           Glyph='&#xf015;' 
 			           Size="22" 
 			           Color="Black" />
 			<FontImage x:Key="NewsIcon"
 			           FontFamily="{StaticResource IconFont}"
-			           Glyph="& #xf1ea;" 
+			           Glyph="&#xf1ea;" 
 			           Size="22" />
+			<FontImage x:Key="HeadlinesIcon"
+			           FontFamily="{StaticResource IconFont}"
+			           Glyph="&#xf70e;" Size="22" />
 			<FontImage x:Key="SettingsIcon"
 			           FontFamily="{StaticResource IconFont}"
-			           Glyph="& #xf013;" 
+			           Glyph="&#xf013;" 
 			           Size="22"
 			           Color="Black" />
 			<FontImage x:Key="AboutIcon"
 			           FontFamily="{StaticResource IconFont}"
-			           Glyph="& #xf05a;"
+			           Glyph="&#xf05a;"
 			           Size="22" Color="Black" />
 		</ResourceDictionary>
     </Application.Resources>

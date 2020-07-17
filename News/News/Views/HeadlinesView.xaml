@@ -3,10 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:News.Views;assembly=News"
              mc:Ignorable="d"
+             x:Name="headlinesview"
              x:Class="News.Views.HeadlinesView"
              Title="Home">
-    <Label VerticalOptions="Center"
-           HorizontalOptions="Center"
-           Text="HeadlinesView!"/>
+    <StackLayout Padding="14">
+        <CollectionView ItemsSource="{Binding CurrentNews.Articles}">
+            <CollectionView.EmptyView>
+                <Label Text="Loading"/>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView>
+                        <ContentView.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.ItemSelected, Source={x:Reference headlinesview}}"
+                                                  CommandParameter="{Binding .}"></TapGestureRecognizer>
+                        </ContentView.GestureRecognizers>
+	                    <views:ArticleItem />
+                    </ContentView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>
